@@ -2,7 +2,7 @@ server {
 
 listen 80;
 
-server_name <server IP or DNS>;
+server_name $ipaddress;
 
 # no security problem here, since / is alway passed to upstream
 
