@@ -2,11 +2,11 @@ server {
 
 listen 80;
 
-server_name $ipaddress;
+server_name dockertest3daap-env.elasticbeanstalk.com;
 
 # no security problem here, since / is alway passed to upstream
 
-root /path/to/test_app/hello;
+#root /path/to/test_app/hello;
 
 # serve directly - analogous for static/staticfiles
 
