@@ -1,6 +1,8 @@
 #!/bin/sh
 #script to automate the config of django+gunicorn+nginx
-touch /log.txt
+easy_install pip
+pip install django gunicorn
+echo "This is a test" > /log.txt
 cd /usr/share/nginx/www/test
 gunicorn tester.wsgi:application --bind=127.0.0.1:8001 &
 netstat -lpn | grep :8001 >> /log.txt
