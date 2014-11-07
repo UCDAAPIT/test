@@ -5,7 +5,7 @@ pip install django gunicorn uwsgi
 echo "This is a test" > /log.txt
 cd /usr/share/nginx/www/test2/tester
 ls >> /log.txt
-gnicorn wsgi:application --bind=0.0.0.0:8000
+gunicorn wsgi:application --bind=0.0.0.0:8000
 echo "run gunicorn" >> /log.txt
 #curl -0 https://raw.githubusercontent.com/UCDAAPIT/test/master/default > /etc/nginx/sites-enabled/default
 echo "download config into nginx" >> /log.txt
