@@ -5,10 +5,10 @@ easy_install pip
 pip install django 
 echo "This is a test" > /log.txt
 cd /usr/share/nginx/www/test/
-python manage.py runserver
+python manage.py runserver 127.0.0.1:8001
 
 ls >> /log.txt
-#gunicorn wsgi:application --bind=0.0.0.0:8000
+#gunicorn wsgi:application --bind=0.0.0.0:80
 echo "run gunicorn" >> /log.txt
 #curl -0 https://raw.githubusercontent.com/UCDAAPIT/test/master/default > /etc/nginx/sites-enabled/default
 echo "download config into nginx" >> /log.txt
