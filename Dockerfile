@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:12.04
 MAINTAINER Andrew Smiley
 # Update packages
 RUN apt-get update -y
@@ -13,14 +13,8 @@ RUN easy_install pip
 ADD . /src
 # Add and install Python modules
 ADD requirements.txt /src/requirements.txt
-RUN pip install virtualenv
-RUN mkdir -p /virtualenvs/django-env/bin
-RUN cd /src && pip install -r /src/requirements.txt 
+RUN  pip install -r /src/requirements.txt 
 
-##RUN /bin/bash -c source /virtualenvs/django-env/bin/activate && pip install -r /src/requirements.txt
-#RUN /src/mysh.sh
 # Expose
 EXPOSE  8002
-WORKDIR /src
-CMD supervisord -c /src/supervisord.conf 
-#CMD /bin/bash
+CMD ["supervisord", "-c", "/src/supervisord.conf"] 
