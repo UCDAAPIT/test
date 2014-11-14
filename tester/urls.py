@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = patterns('',
     # Examples:
@@ -11,5 +12,4 @@ urlpatterns = patterns('',
 
 )
 
-urlpatterns += patterns('',
-        (r'^media/(?P<path>.*)$', 'django.views.static.serve',))
+urlpatterns += staticfiles_urlpatterns()

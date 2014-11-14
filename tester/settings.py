@@ -33,14 +33,15 @@ STATIC_ROOT = '/src/static/'
 STATIC_URL = '/static/'
 
 # Additional locations of static files
-STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static'),
+#STATICFILES_DIRS = (
+ #   os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static'),
+#"/src/static",
 
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     # os.path.join(STATIC_ROOT, "js"),
-)
+#)
 
 # Application definition
 

@@ -15,7 +15,7 @@ ADD . /src
 ADD requirements.txt /src/requirements.txt
 RUN  pip install -r /src/requirements.txt 
 WORKDIR /src 
-RUN python manage.py collectstatic --noinput
+#RUN python manage.py collectstatic --noinput
 # Expose
 EXPOSE  8002
 CMD ["supervisord", "-c", "/src/supervisord.conf"] 
