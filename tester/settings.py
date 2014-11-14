@@ -26,7 +26,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# STATIC_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static')
+#keep this for the docker config
 STATIC_ROOT = '/src/static/'
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -101,4 +101,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
+
+try:
+    from settings_local import *
+except ImportError, e:
+    pass
